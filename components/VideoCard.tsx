@@ -31,12 +31,12 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div>
         <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
-          <div className="md:w-16 md:h-16 w-10 h-10">
+          <div className="md:w-12 md:h-12 w-5 h-5">
             <Link href="/">
               <>
                 <Image
-                  width={62}
-                  height={62}
+                  width={45}
+                  height={45}
                   className="rounded-full"
                   src={post.postedBy.image}
                   alt="profile photo"
@@ -66,7 +66,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
         >
-          <Link href="/">
+          <Link href={`/detail/${post._id}`}>
             <video
               ref={videoRef}
               src={post.video.asset.url}
